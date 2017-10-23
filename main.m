@@ -253,28 +253,26 @@ function btn_hist_show_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 img=getimage(handles.div_image);
-Red = img(:,:,1);
-Green = img(:,:,2);
-Blue = img(:,:,3);
-[yRed, x] = imhist(Red);
-[yGreen, x] = imhist(Green);
-[yBlue, x] = imhist(Blue);
-figure, plot(x, yRed, 'Red', x, yGreen, 'Green', x, yBlue, 'Blue');
+histogram=fn_histgoram(img); title('Histogram');
 
 % --- Executes on button press in btn_hist_eq.
 function btn_hist_eq_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_hist_eq (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+img=getimage(handles.div_image);
+imgEq=fn_histogram_eq(img);
+imshow(imgEq,'Parent',handles.div_image);
+figure, subplot(1,2,1); bar(img);; title('Original Histogram'); subplot(1,2,2); bar(imgEq); title('Histogram Equalization');
+% set resolution
+resolution=fn_resolution(imgEq);
+set(handles.txt_resolution,'String',resolution);
 
 % --- Executes on button press in btn_hist_spec.
 function btn_hist_spec_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_hist_spec (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-
 
 function txt_hist_spec_Callback(hObject, eventdata, handles)
 % hObject    handle to txt_hist_spec (see GCBO)
