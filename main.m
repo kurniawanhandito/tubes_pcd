@@ -140,7 +140,13 @@ function btn_zoom_out_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_zoom_out (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+img=getimage(handles.div_image);
+times=str2num(get(handles.txt_zoom,'String'));
+imgZoom=fn_zoom(img,times);
+imshow(imgZoom,'Parent',handles.div_image);
+% set resolution
+resolution=fn_resolution(imgZoom);
+set(handles.txt_resolution,'String',resolution);
 
 function txt_resolution_Callback(hObject, eventdata, handles)
 % hObject    handle to txt_resolution (see GCBO)
