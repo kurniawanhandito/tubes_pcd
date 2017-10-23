@@ -83,10 +83,8 @@ fullpathname=strcat(pathname,filename);
 img=imread(fullpathname);
 imshow(img,'Parent',handles.div_image);
 % set resolution
-[row,col,page]=size(img);
-resRow=int2str(row);
-resCol=int2str(col);
-set(handles.txt_resolution,'String',strcat(resRow,' x ',resCol));
+resolution=fn_resolution(img);
+set(handles.txt_resolution,'String',resolution);
 
 % --- Executes on button press in btn_save.
 function btn_save_Callback(hObject, eventdata, handles)
@@ -170,10 +168,8 @@ img=getimage(handles.div_image);
 imgFlip=fn_flip_vertical(img);
 imshow(imgFlip,'Parent',handles.div_image);
 % set resolution
-[row,col,page]=size(imgFlip);
-resRow=int2str(row);
-resCol=int2str(col);
-set(handles.txt_resolution,'String',strcat(resRow,' x ',resCol));
+resolution=fn_resolution(imgFlip);
+set(handles.txt_resolution,'String',resolution);
 
 % --- Executes on button press in btn_flip_horizontal.
 function btn_flip_horizontal_Callback(hObject, eventdata, handles)
@@ -184,10 +180,8 @@ img=getimage(handles.div_image);
 imgFlip=fn_flip_horizontal(img);
 imshow(imgFlip,'Parent',handles.div_image);
 % set resolution
-[row,col,page]=size(imgFlip);
-resRow=int2str(row);
-resCol=int2str(col);
-set(handles.txt_resolution,'String',strcat(resRow,' x ',resCol));
+resolution=fn_resolution(imgFlip);
+set(handles.txt_resolution,'String',resolution);
 
 % --- Executes on button press in btn_rotate_90.
 function btn_rotate_90_Callback(hObject, eventdata, handles)
@@ -198,11 +192,8 @@ img=getimage(handles.div_image);
 imgRotate=fn_rotate90(img);
 imshow(imgRotate,'Parent',handles.div_image);
 % set resolution
-[row,col,page]=size(imgRotate);
-resRow=int2str(row);
-resCol=int2str(col);
-set(handles.txt_resolution,'String',strcat(resRow,' x ',resCol));
-
+resolution=fn_resolution(imgRotate);
+set(handles.txt_resolution,'String',resolution);
 
 function txt_degree_Callback(hObject, eventdata, handles)
 % hObject    handle to txt_degree (see GCBO)
@@ -235,10 +226,8 @@ degree=str2num(get(handles.txt_degree,'String'));
 imgRotate=fn_rotate(img,degree);
 imshow(imgRotate,'Parent',handles.div_image);
 % set resolution
-[row,col,page]=size(imgRotate);
-resRow=int2str(row);
-resCol=int2str(col);
-set(handles.txt_resolution,'String',strcat(resRow,' x ',resCol));
+resolution=fn_resolution(imgRotate);
+set(handles.txt_resolution,'String',resolution);
 
 % --- Executes on button press in btn_hist_show.
 function btn_hist_show_Callback(hObject, eventdata, handles)
