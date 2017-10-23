@@ -6,4 +6,3 @@ function resolution = fn_resolution(img)
     resCol=int2str(col);
     resolution=strcat(resRow,' x ',resCol);
 end
-
