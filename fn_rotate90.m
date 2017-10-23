@@ -3,7 +3,7 @@ function imgRotate = fn_rotate90(img)
 %   Detailed explanation goes here
     [row,col,page]=size(img);
     for x=1:page
-        k=col-1;
+        k=col;
         for i=1:row-1
             for j=1:col-1
                 imgRotate(j,k,x)=img(i,j,x);
