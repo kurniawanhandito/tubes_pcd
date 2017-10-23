@@ -1,6 +1,8 @@
 function imgZoom = fn_zoom(img,times)
 %Kodingan dibawah MERUJUK dari laman berikut
 %https://www.mathworks.com/matlabcentral/fileexchange/40993-image-zooming?focused=3781720&tab=function
+%zoom2 adalah fungsi untuk men-zoom citra
+%inputan berupa citra dan times
 
     [row,col,page]=size(img);
     if page==3
@@ -12,7 +14,7 @@ function imgZoom = fn_zoom(img,times)
     k=1; %Counter for Row and
     l=1; %Column replication
     
-    f=times;
+    f=times/100;
 
     for i=1:row %Loop for reading row and
         for t=1:f %Row replication
