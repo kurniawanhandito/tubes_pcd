@@ -21,7 +21,7 @@ function imgRotate = fn_rotate(img,degree)
              %Convert from radians to degree and add the degree value
              %Konversi dari satuan sudut radian ke derajat dan ditambahkan
              %dengan degree inputan dari user
-             t1=radtodeg(t)+degree;
+             t1=radtodeg(t)-degree;
              %Konversi dari derajat ke radian kembali
              t=degtorad(t1);
              %Konversi ke Koordinat Kartesian
