@@ -22,7 +22,7 @@ function varargout = main(varargin)
 
 % Edit the above text to modify the response to help main
 
-% Last Modified by GUIDE v2.5 23-Oct-2017 16:52:26
+% Last Modified by GUIDE v2.5 23-Oct-2017 16:59:57
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -247,3 +247,24 @@ function txt_hist_spec_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+
+
+% --- Executes on button press in btn_modus.
+function btn_modus_Callback(hObject, eventdata, handles)
+% hObject    handle to btn_modus (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in btn_median.
+function btn_median_Callback(hObject, eventdata, handles)
+% hObject    handle to btn_median (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in btn_mean.
+function btn_mean_Callback(hObject, eventdata, handles)
+% hObject    handle to btn_mean (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
