@@ -22,7 +22,7 @@ function varargout = main(varargin)
 
 % Edit the above text to modify the response to help main
 
-% Last Modified by GUIDE v2.5 23-Oct-2017 16:59:57
+% Last Modified by GUIDE v2.5 23-Oct-2017 17:50:19
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -83,17 +83,15 @@ fullpathname=strcat(pathname,filename);
 img=imread(fullpathname);
 imshow(img,'Parent',handles.div_image);
 % set resolution
-[row,col,page]=size(img);
-resRow = int2str(row);
-resCol = int2str(col);
-set(handles.txt_resolution,'String',strcat(resRow,' x ',resCol));
+resolution=fn_resolution(img);
+set(handles.txt_resolution,'String',resolution);
 
 % --- Executes on button press in btn_save.
 function btn_save_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_save (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-img = getimage(handles.div_image);
+img=getimage(handles.div_image);
 [filename,pathname]=uiputfile({'*.jpg','jpg'},'Save Image as JPG');
 imwrite(img,fullfile(pathname, filename),'jpg');
 
@@ -166,42 +164,49 @@ function btn_flip_vertical_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_flip_vertical (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+img=getimage(handles.div_image);
+imgFlip=fn_flip_vertical(img);
+imshow(imgFlip,'Parent',handles.div_image);
+% set resolution
+resolution=fn_resolution(imgFlip);
+set(handles.txt_resolution,'String',resolution);
 
 % --- Executes on button press in btn_flip_horizontal.
 function btn_flip_horizontal_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_flip_horizontal (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+img=getimage(handles.div_image);
+imgFlip=fn_flip_horizontal(img);
+imshow(imgFlip,'Parent',handles.div_image);
+% set resolution
+resolution=fn_resolution(imgFlip);
+set(handles.txt_resolution,'String',resolution);
 
 % --- Executes on button press in btn_rotate_90.
 function btn_rotate_90_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_rotate_90 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-img = getimage(handles.div_image);
-imgRotate = fn_rotate90(img);
+img=getimage(handles.div_image);
+imgRotate=fn_rotate90(img);
 imshow(imgRotate,'Parent',handles.div_image);
 % set resolution
-[row,col,page]=size(imgRotate);
-resRow = int2str(row);
-resCol = int2str(col);
-set(handles.txt_resolution,'String',strcat(resRow,' x ',resCol));
+resolution=fn_resolution(imgRotate);
+set(handles.txt_resolution,'String',resolution);
 
-
-function txt_rotate_Callback(hObject, eventdata, handles)
-% hObject    handle to txt_rotate (see GCBO)
+function txt_degree_Callback(hObject, eventdata, handles)
+% hObject    handle to txt_degree (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of txt_rotate as text
-%        str2double(get(hObject,'String')) returns contents of txt_rotate as a double
+% Hints: get(hObject,'String') returns contents of txt_degree as text
+%        str2double(get(hObject,'String')) returns contents of txt_degree as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function txt_rotate_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to txt_rotate (see GCBO)
+function txt_degree_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to txt_degree (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -216,8 +221,16 @@ function btn_rotate_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_rotate (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-img = getimage(handles.div_image);
-times = str2double(get(handles.txtZoom,'String'));
+img=getimage(handles.div_image);
+[row,col,page]=size(img);
+degree=45;
+result(i,j)=
+%degree=str2num(get(handles.txt_degree,'String'));
+%imgRotate=fn_rotate(img,degree);
+%imshow(imgRotate,'Parent',handles.div_image);
+% set resolution
+%resolution=fn_resolution(imgRotate);
+%set(handles.txt_resolution,'String',resolution);
 
 % --- Executes on button press in btn_hist_show.
 function btn_hist_show_Callback(hObject, eventdata, handles)
