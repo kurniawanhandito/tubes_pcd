@@ -19,4 +19,4 @@ With the addition as follows
 - Smoothing (Mean, Median, and Modus)
 
 Perkembangan Development Tugas ini dapat dilihat melalui link github berikut:
-https://github.com/kurniawanhandito/tubes_pcd2
+https://github.com/kurniawanhandito/tubes_pcd3
