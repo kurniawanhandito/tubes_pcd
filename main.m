@@ -22,7 +22,7 @@ function varargout = main(varargin)
 
 % Edit the above text to modify the response to help main
 
-% Last Modified by GUIDE v2.5 23-Oct-2017 08:27:24
+% Last Modified by GUIDE v2.5 23-Oct-2017 16:52:26
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -71,3 +71,179 @@ function varargout = main_OutputFcn(hObject, eventdata, handles)
 
 % Get default command line output from handles structure
 varargout{1} = handles.output;
+
+
+% --- Executes on button press in btn_browse.
+function btn_browse_Callback(hObject, eventdata, handles)
+% hObject    handle to btn_browse (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in btn_save.
+function btn_save_Callback(hObject, eventdata, handles)
+% hObject    handle to btn_save (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in btn_crop.
+function btn_crop_Callback(hObject, eventdata, handles)
+% hObject    handle to btn_crop (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+
+function txt_zoom_Callback(hObject, eventdata, handles)
+% hObject    handle to txt_zoom (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of txt_zoom as text
+%        str2double(get(hObject,'String')) returns contents of txt_zoom as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function txt_zoom_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to txt_zoom (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes on button press in btn_zoom_in.
+function btn_zoom_in_Callback(hObject, eventdata, handles)
+% hObject    handle to btn_zoom_in (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in btn_zoom_out.
+function btn_zoom_out_Callback(hObject, eventdata, handles)
+% hObject    handle to btn_zoom_out (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+
+function txt_resolution_Callback(hObject, eventdata, handles)
+% hObject    handle to txt_resolution (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of txt_resolution as text
+%        str2double(get(hObject,'String')) returns contents of txt_resolution as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function txt_resolution_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to txt_resolution (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes on button press in btn_flip_vertical.
+function btn_flip_vertical_Callback(hObject, eventdata, handles)
+% hObject    handle to btn_flip_vertical (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in btn_flip_horizontal.
+function btn_flip_horizontal_Callback(hObject, eventdata, handles)
+% hObject    handle to btn_flip_horizontal (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in btn_rotate_90.
+function btn_rotate_90_Callback(hObject, eventdata, handles)
+% hObject    handle to btn_rotate_90 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+
+function txt_rotate_Callback(hObject, eventdata, handles)
+% hObject    handle to txt_rotate (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of txt_rotate as text
+%        str2double(get(hObject,'String')) returns contents of txt_rotate as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function txt_rotate_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to txt_rotate (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes on button press in btn_rotate.
+function btn_rotate_Callback(hObject, eventdata, handles)
+% hObject    handle to btn_rotate (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in btn_hist_show.
+function btn_hist_show_Callback(hObject, eventdata, handles)
+% hObject    handle to btn_hist_show (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in btn_hist_eq.
+function btn_hist_eq_Callback(hObject, eventdata, handles)
+% hObject    handle to btn_hist_eq (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in btn_hist_spec.
+function btn_hist_spec_Callback(hObject, eventdata, handles)
+% hObject    handle to btn_hist_spec (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+
+function txt_hist_spec_Callback(hObject, eventdata, handles)
+% hObject    handle to txt_hist_spec (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of txt_hist_spec as text
+%        str2double(get(hObject,'String')) returns contents of txt_hist_spec as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function txt_hist_spec_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to txt_hist_spec (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
