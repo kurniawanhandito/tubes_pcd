@@ -100,6 +100,13 @@ function btn_crop_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_crop (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+% Hampura Bu
+img=getimage(handles.div_image);
+imgCrop=imcrop(img);
+imshow(imgCrop,'Parent',handles.div_image);
+% set resolution
+resolution=fn_resolution(imgCrop);
+set(handles.txt_resolution,'String',resolution);
 
 function txt_zoom_Callback(hObject, eventdata, handles)
 % hObject    handle to txt_zoom (see GCBO)
@@ -245,7 +252,14 @@ function btn_hist_show_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_hist_show (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+img=getimage(handles.div_image);
+Red = img(:,:,1);
+Green = img(:,:,2);
+Blue = img(:,:,3);
+[yRed, x] = imhist(Red);
+[yGreen, x] = imhist(Green);
+[yBlue, x] = imhist(Blue);
+figure, plot(x, yRed, 'Red', x, yGreen, 'Green', x, yBlue, 'Blue');
 
 % --- Executes on button press in btn_hist_eq.
 function btn_hist_eq_Callback(hObject, eventdata, handles)
