@@ -220,6 +220,11 @@ img=getimage(handles.div_image);
 degree=str2num(get(handles.txt_degree,'String'));
 imgRotate=fn_rotate(img,degree);
 imshow(imgRotate,'Parent',handles.div_image);
+% set resolution
+[row,col,page]=size(imgRotate);
+resRow=int2str(row);
+resCol=int2str(col);
+set(handles.txt_resolution,'String',strcat(resRow,' x ',resCol));
 
 % --- Executes on button press in btn_hist_show.
 function btn_hist_show_Callback(hObject, eventdata, handles)
