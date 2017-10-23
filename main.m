@@ -262,8 +262,7 @@ function btn_hist_eq_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 img=getimage(handles.div_image);
 imgEq=fn_histogram_eq(img);
-imshow(imgEq,'Parent',handles.div_image);
-figure, subplot(1,2,1); bar(img);; title('Original Histogram'); subplot(1,2,2); bar(imgEq); title('Histogram Equalization');
+figure, imshow(imgEq); title('Image from Histogram Equalization');
 % set resolution
 resolution=fn_resolution(imgEq);
 set(handles.txt_resolution,'String',resolution);
