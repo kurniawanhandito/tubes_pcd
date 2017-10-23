@@ -103,8 +103,6 @@ function btn_crop_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-
-
 function txt_zoom_Callback(hObject, eventdata, handles)
 % hObject    handle to txt_zoom (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -112,7 +110,6 @@ function txt_zoom_Callback(hObject, eventdata, handles)
 
 % Hints: get(hObject,'String') returns contents of txt_zoom as text
 %        str2double(get(hObject,'String')) returns contents of txt_zoom as a double
-
 
 % --- Executes during object creation, after setting all properties.
 function txt_zoom_CreateFcn(hObject, eventdata, handles)
@@ -183,7 +180,14 @@ function btn_rotate_90_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_rotate_90 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+img = getimage(handles.div_image);
+imgRotate = fn_rotate90(img);
+imshow(imgRotate,'Parent',handles.div_image);
+% set resolution
+[row,col,page]=size(imgRotate);
+resRow = int2str(row);
+resCol = int2str(col);
+set(handles.txt_resolution,'String',strcat(resRow,' x ',resCol));
 
 
 function txt_rotate_Callback(hObject, eventdata, handles)
