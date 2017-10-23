@@ -3,8 +3,8 @@ function imgRotate = fn_rotate(img,degree)
 %   Detailed explanation goes here
     [row,col,page]=size(img);
     for x=1:page
-        for i=1:row-1
-            for j=1:col-1
+        for i=1:row
+            for j=1:col
                 imgRotate(i,j,x)=img(((i*cosd(degree))-(j*sind(degree))),((j*cosd(degree))+(i*sind(degree))),x);
             end
         end

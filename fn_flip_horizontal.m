@@ -1,12 +1,12 @@
-function imgRotate = fn_rotate90(img)
-%UNTITLED Summary of this function goes here
+function imgFlip = fn_flip_horizontal(img)
+%UNTITLED5 Summary of this function goes here
 %   Detailed explanation goes here
     [row,col,page]=size(img);
     for x=1:page
         k=col;
         for i=1:row
             for j=1:col
-                imgRotate(j,k,x)=img(i,j,x);
+                imgFlip(i,k,x)=img(i,j,x);
             end
             k=k-1;
         end
