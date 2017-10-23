@@ -314,3 +314,10 @@ function btn_mean_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_mean (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+img=getimage(handles.div_image);
+kernel=[1/9 1/9 1/9; 1/9 1/9 1/9; 1/9 1/9 1/9];
+imgKonv=fn_konvolusi(img,kernel);
+figure, imshow(imgKonv); title('Image from "Konvolusi" with Mean Filter');
+% set resolution
+resolution=fn_resolution(imgKonv);
+set(handles.txt_resolution,'String',resolution);
