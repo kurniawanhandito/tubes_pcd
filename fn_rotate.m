@@ -5,7 +5,7 @@ function imgRotate = fn_rotate(img,degree)
     for x=1:page
         for i=1:row-1
             for j=1:col-1
-                imgRotate(i,j,x)=img(,,x);
+                imgRotate(i,j,x)=img(((i*cosd(degree))-(j*sind(degree))),((j*cosd(degree))+(i*sind(degree))),x);
             end
         end
     end
