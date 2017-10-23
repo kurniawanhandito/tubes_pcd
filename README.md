@@ -12,6 +12,7 @@ Mini Photoshop Program using GUI Based with list of function
 - Crop Image using mouse
 - Save Image after editing
 - Show Image Resolution
+
 With the addition as follows
 - Histogram of an image
 - Histogram Equalization
