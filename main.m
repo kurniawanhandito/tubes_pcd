@@ -78,14 +78,24 @@ function btn_browse_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_browse (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+[filename,pathname]=uigetfile({'*.*'},'Pilih Gambar');
+fullpathname=strcat(pathname,filename);
+img=imread(fullpathname);
+imshow(img,'Parent',handles.div_image);
+% set resolution
+[row,col,page]=size(img);
+resRow = int2str(row);
+resCol = int2str(col);
+set(handles.txt_resolution,'String',strcat(resRow,' x ',resCol));
 
 % --- Executes on button press in btn_save.
 function btn_save_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_save (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+img = getimage(handles.div_image);
+[filename,pathname]=uiputfile({'*.jpg','jpg'},'Save Image as JPG');
+imwrite(img,fullfile(pathname, filename),'jpg');
 
 % --- Executes on button press in btn_crop.
 function btn_crop_Callback(hObject, eventdata, handles)
