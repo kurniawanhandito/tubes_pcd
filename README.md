@@ -17,14 +17,12 @@ Tugas Besar - Pengolahan Citra Digital
 * Show Image Resolution
 * Histogram of an Image
 * Histogram Equalization
-* Mean Smoothing
+* Smoothing (Mean)
 
 ## Progress Function
 * Zoom Out
 * Histogram Specification
-* Median Smoothing
-* Modus Smoothing
+* Smoothing (Median, Modus)
 * Bluring
-* Mean, Modus, Median Filtering
 * Edge Detection
 * Morphological (thinning, erotion, dilation)
