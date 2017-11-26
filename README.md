@@ -1,6 +1,6 @@
-# TUBES_PCD3
+# TUBES_PCD
 
-Tugas Besar 3 - Pengolahan Citra Digital
+Tugas Besar - Pengolahan Citra Digital
 
 Mini Photoshop Program using GUI Based with list of function
 - Open Image RGB -> done
@@ -12,8 +12,6 @@ Mini Photoshop Program using GUI Based with list of function
 - Crop Image using mouse  -> done, using imcrop
 - Save Image after editing -> done
 - Show Image Resolution -> done
-
-With the addition as follows
 - Histogram of an image -> done
 - Histogram Equalization -> done
 - Histogram Specification -> not yet, too hard for me
