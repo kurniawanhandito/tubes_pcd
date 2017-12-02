@@ -6,23 +6,27 @@ Tugas Besar - Pengolahan Citra Digital
 * GIT
 
 ## Function
-* Open Image RGB
+* Open Image
 * Show Image
 * Rotate Image (90)
-* Rotate Image (input)
-* Zoom In
-* Flipping (horizontal vertical)
-* Crop Image
 * Save Image
 * Show Image Resolution
-* Histogram of an Image
-* Histogram Equalization
-* Smoothing (Mean)
 
 ## Progress Function
+* Zoom In
 * Zoom Out
+* Rotate Image (Input)
+* Horizontal Flip
+* Vertical Flip
+* Crop Image
+* Show Histogram
+* Histogram Equalization
 * Histogram Specification
-* Smoothing (Median, Modus)
-* Bluring
+* Mean Smoothing
+* Median Smoothing
+* Modus Smoothing
+* Blurring
 * Edge Detection
-* Morphological (thinning, erotion, dilation)
+* Thinning Morphological
+* Erotion Morphological
+* Dilation Morphological
