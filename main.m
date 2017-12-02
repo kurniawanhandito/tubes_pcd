@@ -100,10 +100,9 @@ function btn_crop_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_crop (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-% Hampura Bu
 img=getimage(handles.div_image);
-imgCrop=imcrop(img);
-imshow(imgCrop,'Parent',handles.div_image);
+imgCrop=img;
+figure, imshow(imgCrop); title('Image Cropped');
 % set resolution
 resolution=fn_resolution(imgCrop);
 set(handles.txt_resolution,'String',resolution);
@@ -128,7 +127,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
     set(hObject,'BackgroundColor','white');
 end
 
-
 % --- Executes on button press in btn_zoom_in.
 function btn_zoom_in_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_zoom_in (see GCBO)
@@ -136,8 +134,9 @@ function btn_zoom_in_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 img=getimage(handles.div_image);
 times=str2num(get(handles.txt_zoom,'String'));
-imgZoom=fn_zoom(img,times);
-imshow(imgZoom,'Parent',handles.div_image);
+imgZoom=img;
+% imshow(imgFlip,'Parent',handles.div_image);
+figure, imshow(imgZoom); title('Zoom in Image');
 % set resolution
 resolution=fn_resolution(imgZoom);
 set(handles.txt_resolution,'String',resolution);
@@ -149,8 +148,9 @@ function btn_zoom_out_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 img=getimage(handles.div_image);
 times=str2num(get(handles.txt_zoom,'String'));
-imgZoom=fn_zoom(img,times);
-imshow(imgZoom,'Parent',handles.div_image);
+imgZoom=img;
+% imshow(imgFlip,'Parent',handles.div_image);
+figure, imshow(imgZoom); title('Zoom out Image');
 % set resolution
 resolution=fn_resolution(imgZoom);
 set(handles.txt_resolution,'String',resolution);
@@ -162,7 +162,6 @@ function txt_resolution_Callback(hObject, eventdata, handles)
 
 % Hints: get(hObject,'String') returns contents of txt_resolution as text
 %        str2double(get(hObject,'String')) returns contents of txt_resolution as a double
-
 
 % --- Executes during object creation, after setting all properties.
 function txt_resolution_CreateFcn(hObject, eventdata, handles)
@@ -176,30 +175,17 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
     set(hObject,'BackgroundColor','white');
 end
 
-
 % --- Executes on button press in btn_flip_vertical.
 function btn_flip_vertical_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_flip_vertical (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-img=getimage(handles.div_image);
-imgFlip=fn_flip_vertical(img);
-imshow(imgFlip,'Parent',handles.div_image);
-% set resolution
-resolution=fn_resolution(imgFlip);
-set(handles.txt_resolution,'String',resolution);
 
 % --- Executes on button press in btn_flip_horizontal.
 function btn_flip_horizontal_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_flip_horizontal (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-img=getimage(handles.div_image);
-imgFlip=fn_flip_horizontal(img);
-imshow(imgFlip,'Parent',handles.div_image);
-% set resolution
-resolution=fn_resolution(imgFlip);
-set(handles.txt_resolution,'String',resolution);
 
 % --- Executes on button press in btn_rotate_90.
 function btn_rotate_90_Callback(hObject, eventdata, handles)
@@ -241,8 +227,9 @@ function btn_rotate_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 img=getimage(handles.div_image);
 degree=str2num(get(handles.txt_degree,'String'));
-imgRotate=fn_rotate(img,degree);
-figure, imshow(imgRotate); title('Image Rotate');
+imgRotate=img;
+% imshow(imgRotate,'Parent',handles.div_image);
+figure, imshow(imgRotate); title('Image Rotated');
 % set resolution
 resolution=fn_resolution(imgRotate);
 set(handles.txt_resolution,'String',resolution);
@@ -252,20 +239,12 @@ function btn_hist_show_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_hist_show (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-img=getimage(handles.div_image);
-histogram=fn_histgoram(img); title('Histogram');
 
 % --- Executes on button press in btn_hist_eq.
 function btn_hist_eq_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_hist_eq (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-img=getimage(handles.div_image);
-imgEq=fn_histogram_eq(img);
-figure, imshow(imgEq); title('Image from Histogram Equalization');
-% set resolution
-resolution=fn_resolution(imgEq);
-set(handles.txt_resolution,'String',resolution);
 
 % --- Executes on button press in btn_hist_spec.
 function btn_hist_spec_Callback(hObject, eventdata, handles)
@@ -314,10 +293,3 @@ function btn_mean_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_mean (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-img=getimage(handles.div_image);
-kernel=[1/9 1/9 1/9; 1/9 1/9 1/9; 1/9 1/9 1/9];
-imgKonv=fn_konvolusi(img,kernel);
-figure, imshow(imgKonv); title('Image from "Konvolusi" with Mean Filter');
-% set resolution
-resolution=fn_resolution(imgKonv);
-set(handles.txt_resolution,'String',resolution);
