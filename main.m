@@ -242,7 +242,7 @@ function btn_rotate_Callback(hObject, eventdata, handles)
 img=getimage(handles.div_image);
 degree=str2num(get(handles.txt_degree,'String'));
 imgRotate=fn_rotate(img,degree);
-imshow(imgRotate,'Parent',handles.div_image);
+figure, imshow(imgRotate); title('Image Rotate');
 % set resolution
 resolution=fn_resolution(imgRotate);
 set(handles.txt_resolution,'String',resolution);
