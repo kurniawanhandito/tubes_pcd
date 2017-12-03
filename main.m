@@ -237,8 +237,6 @@ function btn_rotate_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_rotate (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-% https://stackoverflow.com/questions/19684617/image-rotation-by-matlab-without-using-imrotate
-% https://angeljohnsy.blogspot.com/2015/11/image-rotation-in-matlab-examples.html
 img=getimage(handles.div_image);
 degree=str2num(get(handles.txt_degree,'String'));
 imgRotate=fn_rotate(img,degree);
@@ -253,6 +251,8 @@ function btn_hist_show_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_hist_show (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+img=getimage(handles.div_image);
+fn_hist(img);
 
 % --- Executes on button press in btn_hist_eq.
 function btn_hist_eq_Callback(hObject, eventdata, handles)
