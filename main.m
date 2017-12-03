@@ -135,7 +135,7 @@ function btn_zoom_in_Callback(hObject, eventdata, handles)
 img=getimage(handles.div_image);
 times=str2num(get(handles.txt_zoom,'String'));
 imgZoom=fn_zoomIn(img,times);
-% imshow(imgFlip,'Parent',handles.div_image);
+% imshow(imgZoom,'Parent',handles.div_image);
 figure, imshow(imgZoom); title('Zoom in Image');
 % set resolution
 resolution=fn_resolution(imgZoom);
@@ -148,8 +148,8 @@ function btn_zoom_out_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 img=getimage(handles.div_image);
 times=str2num(get(handles.txt_zoom,'String'));
-imgZoom=img;
-% imshow(imgFlip,'Parent',handles.div_image);
+imgZoom=fn_zoomOut(img,times);
+% imshow(imgZoom,'Parent',handles.div_image);
 figure, imshow(imgZoom); title('Zoom out Image');
 % set resolution
 resolution=fn_resolution(imgZoom);
