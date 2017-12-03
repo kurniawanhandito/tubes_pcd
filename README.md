@@ -11,10 +11,10 @@ Tugas Besar - Pengolahan Citra Digital
 * Rotate Image (90)
 * Save Image
 * Show Image Resolution
-
-## Progress Function
 * Zoom In
 * Zoom Out
+
+## Progress Function
 * Rotate Image (Input)
 * Horizontal Flip
 * Vertical Flip
