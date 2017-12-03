@@ -2,7 +2,7 @@ function varargout = main(varargin)
 % MAIN MATLAB code for main.fig
 %      MAIN, by itself, creates a new MAIN or raises the existing
 %      singleton*.
-%
+% 
 %      H = MAIN returns the handle to a new MAIN or the handle to
 %      the existing singleton*.
 %
@@ -225,9 +225,11 @@ function btn_rotate_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_rotate (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+% https://stackoverflow.com/questions/19684617/image-rotation-by-matlab-without-using-imrotate
+% https://angeljohnsy.blogspot.com/2015/11/image-rotation-in-matlab-examples.html
 img=getimage(handles.div_image);
 degree=str2num(get(handles.txt_degree,'String'));
-imgRotate=img;
+imgRotate=fn_rotate(img,degree);
 % imshow(imgRotate,'Parent',handles.div_image);
 figure, imshow(imgRotate); title('Image Rotated');
 % set resolution
