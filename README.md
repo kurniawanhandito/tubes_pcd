@@ -13,11 +13,11 @@ Tugas Besar - Pengolahan Citra Digital
 * Show Image Resolution
 * Zoom In
 * Zoom Out
+* Horizontal Flip
+* Vertical Flip
 
 ## Progress Function
 * Rotate Image (Input)
-* Horizontal Flip
-* Vertical Flip
 * Crop Image
 * Show Histogram
 * Histogram Equalization
