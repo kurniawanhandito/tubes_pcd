@@ -1,0 +1,4 @@
+function fn_hist(img)
+%fn_hist Summary of this function goes here
+%   Detailed explanation goes here
+[rowRed,colRed] = size(red);
