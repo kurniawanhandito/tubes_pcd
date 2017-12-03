@@ -180,6 +180,12 @@ function btn_flip_vertical_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_flip_vertical (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+img=getimage(handles.div_image);
+imgFlip=fn_flipV(img);
+imshow(imgFlip,'Parent',handles.div_image);
+% set resolution
+resolution=fn_resolution(imgFlip);
+set(handles.txt_resolution,'String',resolution);
 
 % --- Executes on button press in btn_flip_horizontal.
 function btn_flip_horizontal_Callback(hObject, eventdata, handles)
