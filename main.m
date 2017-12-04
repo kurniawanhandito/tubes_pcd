@@ -22,7 +22,7 @@ function varargout = main(varargin)
 
 % Edit the above text to modify the response to help main
 
-% Last Modified by GUIDE v2.5 04-Dec-2017 07:43:15
+% Last Modified by GUIDE v2.5 04-Dec-2017 09:23:02
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -101,12 +101,15 @@ function btn_crop_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 img=getimage(handles.div_image);
-sx=str2num(get(handles.txt_sx,'String'));
-sy=str2num(get(handles.txt_sy,'String'));
-fx=str2num(get(handles.txt_fx,'String'));
-fy=str2num(get(handles.txt_fy,'String'));
-imgCrop=fn_crop(img,sx,sy,fx,fy);
-% imshow(imgZoom,'Parent',handles.div_image);
+x1=str2num(get(handles.txt_x1,'String'));
+y1=str2num(get(handles.txt_y1,'String'));
+width=str2num(get(handles.txt_w,'String'));
+height=str2num(get(handles.txt_h,'String'));
+imshow(img,'Parent',handles.div_image);
+hold on;
+rectangle('Position',[x1 y1 width height],'LineWidth',1,'LineStyle','--','EdgeColor', 'b');
+rect=[x1 y1 width height];
+imgCrop=imcrop(img,rect);
 figure, imshow(imgCrop); title('Cropped Image');
 % set resolution
 resolution=fn_resolution(imgCrop);
@@ -322,18 +325,18 @@ function btn_mean_Callback(hObject, eventdata, handles)
 
 
 
-function txt_sx_Callback(hObject, eventdata, handles)
-% hObject    handle to txt_sx (see GCBO)
+function txt_x1_Callback(hObject, eventdata, handles)
+% hObject    handle to txt_x1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of txt_sx as text
-%        str2double(get(hObject,'String')) returns contents of txt_sx as a double
+% Hints: get(hObject,'String') returns contents of txt_x1 as text
+%        str2double(get(hObject,'String')) returns contents of txt_x1 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function txt_sx_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to txt_sx (see GCBO)
+function txt_x1_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to txt_x1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -345,18 +348,18 @@ end
 
 
 
-function txt_sy_Callback(hObject, eventdata, handles)
-% hObject    handle to txt_sy (see GCBO)
+function txt_y1_Callback(hObject, eventdata, handles)
+% hObject    handle to txt_y1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of txt_sy as text
-%        str2double(get(hObject,'String')) returns contents of txt_sy as a double
+% Hints: get(hObject,'String') returns contents of txt_y1 as text
+%        str2double(get(hObject,'String')) returns contents of txt_y1 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function txt_sy_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to txt_sy (see GCBO)
+function txt_y1_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to txt_y1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -368,18 +371,18 @@ end
 
 
 
-function txt_fx_Callback(hObject, eventdata, handles)
-% hObject    handle to txt_fx (see GCBO)
+function txt_w_Callback(hObject, eventdata, handles)
+% hObject    handle to txt_w (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of txt_fx as text
-%        str2double(get(hObject,'String')) returns contents of txt_fx as a double
+% Hints: get(hObject,'String') returns contents of txt_w as text
+%        str2double(get(hObject,'String')) returns contents of txt_w as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function txt_fx_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to txt_fx (see GCBO)
+function txt_w_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to txt_w (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -391,18 +394,18 @@ end
 
 
 
-function txt_fy_Callback(hObject, eventdata, handles)
-% hObject    handle to txt_fy (see GCBO)
+function txt_h_Callback(hObject, eventdata, handles)
+% hObject    handle to txt_h (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of txt_fy as text
-%        str2double(get(hObject,'String')) returns contents of txt_fy as a double
+% Hints: get(hObject,'String') returns contents of txt_h as text
+%        str2double(get(hObject,'String')) returns contents of txt_h as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function txt_fy_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to txt_fy (see GCBO)
+function txt_h_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to txt_h (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
