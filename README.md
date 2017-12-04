@@ -25,7 +25,6 @@ Tugas Besar - Pengolahan Citra Digital
 * Mean Smoothing
 * Median Smoothing
 * Modus Smoothing
-* Blurring
 * Edge Detection
 * Thinning Morphological
 * Erotion Morphological
