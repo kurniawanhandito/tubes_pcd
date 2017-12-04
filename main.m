@@ -259,6 +259,13 @@ function btn_hist_eq_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_hist_eq (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+img=getimage(handles.div_image);
+imgEq=fn_hist_eq(img);
+% imshow(imgEq,'Parent',handles.div_image);
+figure, imshow(imgEq); title('Histogram Equalization Result');
+% set resolution
+resolution=fn_resolution(imgEq);
+set(handles.txt_resolution,'String',resolution);
 
 % --- Executes on button press in btn_hist_spec.
 function btn_hist_spec_Callback(hObject, eventdata, handles)
