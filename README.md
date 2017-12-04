@@ -16,10 +16,10 @@ Tugas Besar - Pengolahan Citra Digital
 * Horizontal Flip
 * Vertical Flip
 * Show Histogram
+* Crop Image
 
 ## Progress Function
 * Rotate Image (Input)
-* Crop Image
 * Histogram Equalization
 * Histogram Specification
 * Mean Smoothing
