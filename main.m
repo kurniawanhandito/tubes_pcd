@@ -22,7 +22,7 @@ function varargout = main(varargin)
 
 % Edit the above text to modify the response to help main
 
-% Last Modified by GUIDE v2.5 04-Dec-2017 09:23:02
+% Last Modified by GUIDE v2.5 04-Dec-2017 09:58:54
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -247,7 +247,7 @@ function btn_rotate_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 img=getimage(handles.div_image);
 degree=str2num(get(handles.txt_degree,'String'));
-imgRotate=fn_rotate(img,degree);
+imgRotate=fn_rotate2(img,degree);
 % imshow(imgRotate,'Parent',handles.div_image);
 figure, imshow(imgRotate); title('Image Rotated');
 % set resolution
@@ -276,7 +276,7 @@ resolution=fn_resolution(imgEq);
 set(handles.txt_resolution,'String',resolution);
 
 % --- Executes on button press in btn_hist_spec.
-function btn_hist_spec_Callback(hObject, eventdata, handles)
+function btn_hist_spec_Callback(~, ~, handles)
 % hObject    handle to btn_hist_spec (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -414,3 +414,31 @@ function txt_h_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+
+
+% --- Executes on button press in btn_edge.
+function btn_edge_Callback(hObject, eventdata, handles)
+% hObject    handle to btn_edge (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in pushbutton17.
+function pushbutton17_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton17 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in pushbutton18.
+function pushbutton18_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton18 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in pushbutton19.
+function pushbutton19_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton19 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
